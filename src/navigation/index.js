@@ -1,9 +1,14 @@
 import * as React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import {
+  MaterialCommunityIcons,
+  MaterialIcons,
+  FontAwesome,
+} from "@expo/vector-icons";
 import HomeScreen from "../HomeScreen";
 import FavouriteScreen from "../FavouriteScreen";
 import AlertScreen from "../AlertScreen";
+import SearchScreen from "../SearchScreen";
 import { PRIMARY_SCREEN_COLOR } from "../../res/colors";
 
 const Tab = createMaterialBottomTabNavigator();
@@ -33,6 +38,16 @@ export default function NavigationFile() {
           tabBarLabel: "Alert",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="bell" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="SearchScreen"
+        component={SearchScreen}
+        options={{
+          tabBarLabel: "Search",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="search" size={26} color={color} />
           ),
         }}
       />
