@@ -1,7 +1,7 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import NavigationFile from "./src/navigation";
-import AppProvider from "./src/screens/Context";
+import AppProvider from "./src/Context";
 
 export default function App() {
   return (

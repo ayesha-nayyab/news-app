@@ -2,9 +2,9 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import NoInternet from "../NoInternet";
 import { useGlobalContext } from "../Context";
-import { PRIMARY_SCREEN_COLOR } from "../../../res/colors";
+import { PRIMARY_SCREEN_COLOR } from "../../res/colors";
 
-const Home = () => {
+const HomeScreen = () => {
   const { isConnected } = useGlobalContext();
   console.log(isConnected);
 
@@ -18,7 +18,7 @@ const Home = () => {
     </View>
   );
 };
-export default Home;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
