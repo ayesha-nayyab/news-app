@@ -1,16 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import NoInternet from "../NoInternet";
-import { useGlobalContext } from "../Context";
+import { StyleSheet, Text, View, StatusBar } from "react-native";
+import React, { useContext } from "react";
 import { PRIMARY_SCREEN_COLOR } from "../../res/colors";
+import { AppContext } from "../../store/Context";
+import NoInternet from "../../components/NoInternet";
 
 const HomeScreen = () => {
-  const { isConnected } = useGlobalContext();
+  const { isConnected } = useContext(AppContext);
   console.log(isConnected);
 
   return isConnected ? (
     <View style={styles.container}>
       <Text>Home</Text>
+      <StatusBar backgroundColor="#f1eded" barStyle="dark-content" />
     </View>
   ) : (
     <View style={styles.noInternetScreen}>

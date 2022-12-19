@@ -3,13 +3,12 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import {
   MaterialCommunityIcons,
   MaterialIcons,
-  FontAwesome,
+  Ionicons,
 } from "@expo/vector-icons";
-import HomeScreen from "../HomeScreen";
-import FavouriteScreen from "../FavouriteScreen";
-import AlertScreen from "../AlertScreen";
-import SearchScreen from "../SearchScreen";
-import { PRIMARY_SCREEN_COLOR } from "../../res/colors";
+import HomeScreen from "../screens/HomeScreen";
+import FavouriteScreen from "../screens/FavouriteScreen";
+import SettingScreen from "../screens/SettingScreen";
+import { PRIMARY_SCREEN_COLOR } from "../res/colors";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -27,27 +26,17 @@ export default function NavigationFile() {
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" size={26} color={color} />
+            <MaterialCommunityIcons name="home" size={28} color={color} />
           ),
         }}
       />
       <Tab.Screen
-        name="AlertScreen"
-        component={AlertScreen}
+        name="SettingScreen"
+        component={SettingScreen}
         options={{
-          tabBarLabel: "Alert",
+          tabBarLabel: "Setting",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="SearchScreen"
-        component={SearchScreen}
-        options={{
-          tabBarLabel: "Search",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name="search" size={26} color={color} />
+            <Ionicons name="settings" size={28} color={color} />
           ),
         }}
       />
@@ -57,7 +46,7 @@ export default function NavigationFile() {
         options={{
           tabBarLabel: "Favourite",
           tabBarIcon: ({ color }) => (
-            <MaterialIcons name="favorite" size={26} color={color} />
+            <MaterialIcons name="favorite" size={28} color={color} />
           ),
         }}
       />

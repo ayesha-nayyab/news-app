@@ -1,9 +1,9 @@
-import { createContext, useContext, useState, useEffect } from "react";
 import NetInfo from "@react-native-community/netinfo";
+import { createContext, useEffect, useState } from "react";
 
-export const AppContext = createContext();
+const AppContext = createContext();
 
-export default function AppProvider({ children }) {
+const AppProvider = ({ children }) => {
   const [isConnected, setIsConnected] = useState();
 
   useEffect(() => {
@@ -23,8 +23,5 @@ export default function AppProvider({ children }) {
       {children}
     </AppContext.Provider>
   );
-}
-
-export const useGlobalContext = () => {
-  return useContext(AppContext);
 };
+export { AppContext, AppProvider };

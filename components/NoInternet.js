@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { PRIMARY_SCREEN_COLOR, LIGHT_PURPLE_COLOR } from "../../res/colors";
+import { PRIMARY_SCREEN_COLOR, LIGHT_PURPLE_COLOR } from "../res/colors";
 import { MaterialIcons } from "@expo/vector-icons";
 
 const NoInternet = () => {

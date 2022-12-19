@@ -1,16 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import NoInternet from "../NoInternet";
-import { useGlobalContext } from "../Context";
+import React, { useContext } from "react";
 import { PRIMARY_SCREEN_COLOR } from "../../res/colors";
+import { AppContext } from "../../store/Context";
+import NoInternet from "../../components/NoInternet";
 
-const SearchScreen = () => {
-  const { isConnected } = useGlobalContext();
+const FavouriteScreen = () => {
+  const { isConnected } = useContext(AppContext);
   console.log(isConnected);
 
   return isConnected ? (
     <View style={styles.container}>
-      <Text>Search</Text>
+      <Text>Favourite</Text>
     </View>
   ) : (
     <View style={styles.noInternetScreen}>
@@ -18,7 +18,8 @@ const SearchScreen = () => {
     </View>
   );
 };
-export default SearchScreen;
+
+export default FavouriteScreen;
 
 const styles = StyleSheet.create({
   container: {
