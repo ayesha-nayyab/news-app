@@ -1,17 +1,16 @@
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React, { useContext } from "react";
-import { PRIMARY_SCREEN_COLOR } from "../../res/colors";
-import { AppContext } from "../../store/Context";
-import NoInternet from "../../components/NoInternet";
+import { PRIMARY_SCREEN_COLOR } from "../res/colors";
+import { AppContext } from "../store/Context";
+import NoInternet from "../components/NoInternet";
 
-const HomeScreen = () => {
+const FavouriteScreen = () => {
   const { isConnected } = useContext(AppContext);
   console.log(isConnected);
 
   return isConnected ? (
     <View style={styles.container}>
-      <Text>Home</Text>
-      <StatusBar backgroundColor="#f1eded" barStyle="dark-content" />
+      <Text>Favourite</Text>
     </View>
   ) : (
     <View style={styles.noInternetScreen}>
@@ -19,7 +18,8 @@ const HomeScreen = () => {
     </View>
   );
 };
-export default HomeScreen;
+
+export default FavouriteScreen;
 
 const styles = StyleSheet.create({
   container: {

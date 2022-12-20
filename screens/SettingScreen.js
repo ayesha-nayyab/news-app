@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useContext } from "react";
-import { PRIMARY_SCREEN_COLOR } from "../../res/colors";
-import { AppContext } from "../../store/Context";
-import NoInternet from "../../components/NoInternet";
+import { PRIMARY_SCREEN_COLOR } from "../res/colors";
+import { AppContext } from "../store/Context";
+import NoInternet from "../components/NoInternet";
 
 const SettingScreen = () => {
   const { isConnected } = useContext(AppContext);
